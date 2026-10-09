@@ -1,20 +1,21 @@
 import 'dart:convert';
+import 'package:personagens/models/list_characters_model.dart';
 import 'package:http/http.dart' as http;
-import '../models/character_model.dart';
+
+import '../models/list_characters_model.dart';
 
 class CharacterService {
-  final String url = 'https://rickandmortyapi.com/api/character';
+  String url = "https://rickandmortyapi.com/api/character";
 
-  Future<List<CharacterModel>> fetchCharacters() async {
+  Future<ListCharacters> fetchListCharacters() async {
     final response = await http.get(Uri.parse(url));
     print('statusCode: ${response.statusCode}');
 
     if (response.statusCode == 200) {
-      final Map<String, dynamic> body = json.decode(response.body);
-      final List results = body['results'];
-      return results.map((item) => CharacterModel.fromJson(item)).toList();
-    }else{
-      throw Exception('Falha ao carregar (${response.statusCode})');
+      Map<String, dynamic> retorno = json.decode(response.body);
+      return ListCharacters.fromJson(retorno);
+    } else {
+      throw Exception('Falhou ao carregar');
     }
   }
 }

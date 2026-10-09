@@ -6,24 +6,13 @@ class CharacterModel {
   final String gender;
   final String image;
 
-  CharacterModel({
-    required this.id,
-    required this.name,
-    required this.status,
-    required this.species,
-    required this.gender,
-    required this.image,
-});
+  CharacterModel(this.id, this.name, this.status, this.species, this.gender, this.image);
 
-  factory CharacterModel.fromJson(Map<String, dynamic>json) {
-    return CharacterModel(
-      id: json['id'],
-      name: json['name'],
-      status: json['status'],
-      species: json['species'],
-      gender: json['gender'],
-      image: json['image'],
-    );
-  }
-
+  CharacterModel.fromJson(Map<String, dynamic> json) :
+        id = json['id'],
+        name = json['name'],
+        status = json['status'],
+        species = json['species'],
+        gender = json['gender'],
+        image = json['image'];
 }

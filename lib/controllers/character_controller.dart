@@ -1,24 +1,31 @@
+import 'package:personagens/models/character_model.dart';
+import 'package:personagens/services/character_service.dart';
 import 'package:get/get.dart';
+
 import '../models/character_model.dart';
 import '../services/character_service.dart';
 
 class CharacterController extends GetxController {
-  final CharacterService _service = CharacterService();
+
+  CharacterService characterService = CharacterService();
 
   var isLoading = false.obs;
-  var characters = <CharacterModel>[].obs;
 
-  static CharacterController get to => Get.find();
+  var listCharactersObs = <CharacterModel>[].obs;
 
-  Future<void> fetchCharacters() async{
+  static CharacterController get character => Get.find();
+
+  Future<dynamic> listCharacters() async {
     isLoading.value = true;
     try {
-      characters.value = await _service.fetchCharacters();
-      print('Controller recebeu ${characters.length} personagens');
-    }catch (e) {
+      var list = await characterService.fetchListCharacters();
+      listCharactersObs.value = list.listCharacters;
+      print('Controller recebeu ${listCharactersObs.length} personagens');
+    } catch (e) {
       print('Erro: $e');
     } finally {
       isLoading.value = false;
     }
+    return listCharactersObs;
   }
 }
