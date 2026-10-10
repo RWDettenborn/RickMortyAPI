@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:personagens/models/list_characters_model.dart';
+import 'package:rickandmortyapi/models/list_characters_model.dart';
 import 'package:http/http.dart' as http;
 
 import '../models/list_characters_model.dart';

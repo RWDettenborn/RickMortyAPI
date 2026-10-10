@@ -1,6 +1,6 @@
-import 'package:personagens/controller_binding.dart';
+import 'package:rickandmortyapi/controller_binding.dart';
 import 'package:flutter/material.dart';
-import 'package:personagens/screens/home.dart';
+import 'package:rickandmortyapi/screens/home.dart';
 import 'package:get/get.dart';
 import 'package:rickandmortyapi/screens/home.dart';
 import 'controller_binding.dart';

@@ -1,6 +1,6 @@
-import 'package:personagens/components/character_image.dart';
-import 'package:personagens/controllers/character_controller.dart';
-import 'package:personagens/screens/character_details.dart';
+import 'package:rickandmortyapi/components/character_image.dart';
+import 'package:rickandmortyapi/controllers/character_controller.dart';
+import 'package:rickandmortyapi/screens/character_details.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

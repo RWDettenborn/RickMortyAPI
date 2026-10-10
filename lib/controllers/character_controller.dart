@@ -1,5 +1,5 @@
-import 'package:personagens/models/character_model.dart';
-import 'package:personagens/services/character_service.dart';
+import 'package:rickandmortyapi/models/character_model.dart';
+import 'package:rickandmortyapi/services/character_service.dart';
 import 'package:get/get.dart';
 
 import '../models/character_model.dart';

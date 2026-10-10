@@ -1,5 +1,5 @@
-import 'package:personagens/components/character_image.dart';
-import 'package:personagens/models/character_model.dart';
+import 'package:rickandmortyapi/components/character_image.dart';
+import 'package:rickandmortyapi/models/character_model.dart';
 import 'package:flutter/material.dart';
 
 import '../components/character_image.dart';
